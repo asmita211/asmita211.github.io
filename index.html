@@ -1,162 +1,911 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asmita Baa | AI & Cybersecurity</title>
+
+    <meta name="description" content="Asmita Baa - Applied Cryptography and Privacy-Preserving Computing Research Portfolio">
+
+    <title>Asmita Baa | Research Portfolio</title>
 
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #ffffff;
-            color: #333333;
+        * {
+            box-sizing: border-box;
         }
 
-        header {
-            padding: 25px 8%;
-            border-bottom: 1px solid #eeeeee;
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #ffffff;
+            color: #111111;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.55;
+        }
+
+        /* Navigation */
+
+        .site-header {
+            max-width: 1440px;
+            margin: auto;
+            padding: 28px 5% 12px;
+        }
+
+        .navigation {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
         }
 
-        header h2 {
+        .nav-button {
+            border: 2px solid #111;
+            border-radius: 50px;
+            background: white;
+            color: black;
+            min-width: 150px;
+            padding: 9px 24px;
+            font-size: 19px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-button:hover,
+        .nav-button[aria-selected="true"] {
+            background: #111;
+            color: white;
+        }
+
+        /* Main */
+
+        main {
+            max-width: 1440px;
+            min-height: 650px;
+            margin: 18px auto 0;
+            padding: 12px 5.4% 55px;
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        /* Home Page */
+
+        .home-layout {
+            display: grid;
+            grid-template-columns: 370px 1fr;
+            gap: 65px;
+            align-items: start;
+        }
+
+        .profile-column {
+            text-align: center;
+        }
+
+        .profile-photo {
+            display: block;
+            width: 330px;
+            height: 330px;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 8px auto 0;
+            background: #eeeeee;
+        }
+
+        .profile-column h1 {
+            margin: 4px 0 14px;
+            font-size: 29px;
+        }
+
+        .profile-subtitle {
+            margin: 18px 0;
+            font-size: 19px;
+        }
+
+        .profile-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 13px;
+            margin-top: 22px;
+        }
+
+        .profile-links a {
+            font-size: 18px;
+            color: black;
+            text-decoration: none;
+        }
+
+        .profile-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* About Me */
+
+        .about h2 {
+            margin: 0 0 6px;
+            text-align: center;
+            font-size: 27px;
+        }
+
+        .about p {
+            margin: 0 0 25px;
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        .research-focus {
+            margin-top: 26px;
+            font-size: 18px;
+            line-height: 1.55;
+        }
+
+        .research-focus h3 {
+            margin: 0 0 2px;
+            font-size: 19px;
+        }
+
+        /* Other Pages */
+
+        .page-title {
+            margin: 12px 0 24px;
+            font-size: 25px;
+        }
+
+        /* Publication */
+
+        .publication-entry {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            align-items: flex-start;
+            padding: 4px 0 22px;
+            font-size: 16px;
+        }
+
+        .publication-entry p {
             margin: 0;
         }
 
-        nav a {
-            margin-left: 30px;
+        .publication-date {
+            flex-shrink: 0;
+            padding-top: 25px;
+            color: #555;
+            white-space: nowrap;
+        }
+
+        /* Projects */
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px 55px;
+        }
+
+        .project-card {
+            padding-bottom: 16px;
+        }
+
+        .project-card h3 {
+            margin: 0 0 5px;
+            font-size: 18px;
+        }
+
+        .project-card p {
+            margin: 3px 0;
+        }
+
+        .project-card .project-name {
+            font-weight: bold;
+        }
+
+        .project-card a {
+            color: black;
+        }
+
+        .empty-message {
+            color: #555;
+            font-size: 17px;
+        }
+
+        /* CV */
+
+        .cv-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .action-link {
+            display: inline-block;
+            border: 2px solid black;
+            border-radius: 50px;
+            padding: 8px 20px;
+            color: black;
             text-decoration: none;
-            color: #333333;
+            font-weight: bold;
         }
 
-        main {
-            max-width: 1000px;
-            margin: 80px auto;
-            padding: 0 30px;
+        .action-link:hover {
+            background: black;
+            color: white;
         }
 
-        h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
+        .cv-frame {
+            width: 100%;
+            height: 720px;
+            border: 1px solid #ddd;
+            background: #f7f7f7;
         }
 
-        .subtitle {
-            font-size: 22px;
-            color: #666666;
-        }
-
-        section {
-            margin-top: 60px;
-        }
-
-        h2 {
-            font-size: 28px;
-        }
-
-        li {
-            margin: 12px 0;
-        }
+        /* Footer */
 
         footer {
-            margin-top: 100px;
-            padding: 30px;
-            text-align: center;
-            background: #f5f5f5;
+            max-width: 1440px;
+            margin: auto;
+            border-top: 1px solid #eee;
+            padding: 22px 5.4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px 35px;
+            flex-wrap: wrap;
+            font-size: 17px;
         }
-        .profile {
-    margin-bottom: 25px;
-}
 
-.profile img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #eeeeee;
-}
+        footer strong {
+            font-size: 18px;
+        }
+
+        footer a {
+            color: black;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+
+        @media (max-width: 850px) {
+
+            .navigation {
+                justify-content: center;
+            }
+
+            .nav-button {
+                min-width: 125px;
+                font-size: 16px;
+                padding: 8px 17px;
+            }
+
+            .home-layout {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .profile-photo {
+                width: 230px;
+                height: 230px;
+            }
+
+            .about p {
+                text-align: left;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .publication-entry {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .publication-date {
+                padding-top: 0;
+            }
+
+            .cv-frame {
+                height: 600px;
+            }
+
+            footer {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .site-header {
+                padding: 18px 14px 8px;
+            }
+
+            main {
+                padding: 15px 20px 40px;
+            }
+
+            .nav-button {
+                min-width: 0;
+                flex: 1 1 28%;
+                font-size: 14px;
+                padding: 8px 10px;
+            }
+
+            .profile-photo {
+                width: 205px;
+                height: 205px;
+            }
+
+            .about p,
+            .research-focus {
+                font-size: 16px;
+            }
+
+            .cv-frame {
+                height: 480px;
+            }
+        }
+
     </style>
 </head>
 
 <body>
 
-<header>
-    <h2>Asmita Baa</h2>
+    <!-- Navigation Bar -->
 
-    <nav>
-        <a href="#research">Research</a>
-        <a href="#projects">Projects</a>
-        <a href="#publications">Publications</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+    <header class="site-header">
 
-<main>
+        <nav class="navigation" role="tablist">
 
-    <h1>Asmita Baa</h1>
-    <div class="profile">
-    <img src="profile.jpg" alt="Asmita Baa">
-</div>
+            <button class="nav-button"
+                id="tab-home"
+                role="tab"
+                aria-selected="true"
+                onclick="showTab('home')">
+                Home
+            </button>
 
-    <p class="subtitle">
-        AI • Cybersecurity • Privacy-Preserving Computing
-    </p>
+            <button class="nav-button"
+                id="tab-publication"
+                role="tab"
+                aria-selected="false"
+                onclick="showTab('publication')">
+                Publication
+            </button>
 
-    <p>
-        I am a Computer Applications graduate interested in
-        Artificial Intelligence, Applied Cryptography, and
-        Privacy-Preserving Machine Learning.
-    </p>
+            <button class="nav-button"
+                id="tab-presentation"
+                role="tab"
+                aria-selected="false"
+                onclick="showTab('presentation')">
+                Presentation
+            </button>
 
-    <section id="research">
-        <h2>Research Interests</h2>
+            <button class="nav-button"
+                id="tab-projects"
+                role="tab"
+                aria-selected="false"
+                onclick="showTab('projects')">
+                Projects
+            </button>
 
-        <ul>
-            <li>Privacy-Preserving Machine Learning</li>
-            <li>Applied Cryptography</li>
-            <li>Federated Learning</li>
-            <li>Adversarial Robustness</li>
-            <li>Homomorphic Encryption</li>
-            <li>Secure AI Systems</li>
-        </ul>
-    </section>
+            <button class="nav-button"
+                id="tab-cv"
+                role="tab"
+                aria-selected="false"
+                onclick="showTab('cv')">
+                CV
+            </button>
 
-    <section id="projects">
-        <h2>Projects</h2>
+        </nav>
 
-        <h3>Encryption Hub</h3>
-        <p>
-            A Python and Streamlit application implementing
-            Caesar Cipher, AES, RSA and SHA-256.
-        </p>
-    </section>
+    </header>
 
-    <section id="publications">
-        <h2>Publications</h2>
 
-        <p>
-            <strong>AI for Industrial Information Retrieval and Processing</strong>
-        </p>
+    <main>
 
-        <p>
-            Book chapter contribution on the application of
-            Artificial Intelligence in industrial information systems.
-        </p>
-    </section>
+        <!-- HOME PAGE -->
 
-    <section id="contact">
-        <h2>Contact</h2>
+        <section class="tab-panel active"
+            id="home"
+            role="tabpanel">
 
-        <p>Email: your-email@example.com</p>
-        <p>GitHub: asmita211</p>
-    </section>
+            <div class="home-layout">
 
-</main>
+                <!-- Profile Section -->
 
-<footer>
-    © 2026 Asmita Baa
-</footer>
+                <aside class="profile-column">
+
+                    <img
+                        class="profile-photo"
+                        src="profile.jpg"
+                        alt="Asmita Baa">
+
+                    <h1>Asmita Baa</h1>
+
+                    <p class="profile-subtitle">
+                        Computer Applications Graduate
+                    </p>
+
+                    <p>Jharkhand, India</p>
+
+                    <div class="profile-links">
+
+                        <a href="https://github.com/asmita211"
+                           target="_blank">
+                            GitHub
+                        </a>
+
+                        <a href="#"
+                           target="_blank">
+                            LinkedIn
+                        </a>
+
+                        <a href="#"
+                           target="_blank">
+                            Instagram
+                        </a>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- About Me Section -->
+
+                <div class="about">
+
+                    <h2>About Me</h2>
+
+                    <p>
+                        I am a Computer Applications graduate with a
+                        strong interest in
+                        <strong>Applied Cryptography and
+                        Privacy-Preserving Computing.</strong>
+                        My research interests focus on developing
+                        secure computation techniques that enable
+                        sensitive data to be processed while minimizing
+                        unnecessary exposure of the underlying
+                        information.
+                    </p>
+
+                    <p>
+                        I am particularly interested in
+                        <strong>Homomorphic Encryption,
+                        Secure Multi-Party Computation, and
+                        Zero-Knowledge Proofs</strong>,
+                        and their application to
+                        <strong>Privacy-Preserving Artificial
+                        Intelligence and Machine Learning.</strong>
+                        Through my graduate studies, I aim to develop
+                        deeper expertise in these areas and explore
+                        practical solutions for secure AI systems.
+                    </p>
+
+                    <p>
+                        My long-term goal is to contribute as a
+                        <strong>researcher and engineer</strong>
+                        to secure and privacy-preserving computing,
+                        particularly for sensitive applications in
+                        <strong>healthcare, finance, education,
+                        and cloud-based AI services.</strong>
+                    </p>
+
+
+                    <!-- Research Focus -->
+
+                    <div class="research-focus">
+
+                        <h3>Research Focus</h3>
+
+                        <div>
+                            <strong>Core Expertise:</strong>
+                            Applied Cryptography
+                        </div>
+
+                        <div>
+                            <strong>Research Focus:</strong>
+                            Privacy-Preserving Computing
+                        </div>
+
+                        <div>
+                            <strong>Key Areas:</strong>
+                            Homomorphic Encryption ·
+                            Secure Multi-Party Computation ·
+                            Zero-Knowledge Proofs
+                        </div>
+
+                        <div>
+                            <strong>Application:</strong>
+                            Privacy-Preserving AI &amp;
+                            Machine Learning
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PUBLICATION PAGE -->
+
+        <section class="tab-panel"
+            id="publication"
+            role="tabpanel">
+
+            <h2 class="page-title">
+                Publication
+            </h2>
+
+            <div class="publication-entry">
+
+                <div>
+
+                    <p>
+                        <strong>Book Title:</strong>
+                        Sustainable Artificial Intelligence
+                        for Industrial Automation
+                    </p>
+
+                    <p>
+                        <strong>Part of Book Series:</strong>
+                        Frontiers of Artificial Intelligence,
+                        Ethics and Multidisciplinary Applications
+                    </p>
+
+                    <p>
+                        <strong>Chapter 12:</strong>
+                        AI for Industrial Information Retrieval
+                        and Processing
+                    </p>
+
+                    <p>
+                        <strong>Publisher:</strong>
+                        Springer Nature Singapore Pte Ltd.
+                    </p>
+
+                </div>
+
+                <div class="publication-date">
+                    Aug 2025 – Dec 2025
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRESENTATION PAGE -->
+
+        <section class="tab-panel"
+            id="presentation"
+            role="tabpanel">
+
+            <h2 class="page-title">
+                Presentation
+            </h2>
+
+            <p class="empty-message">
+                Presentation details and slides will be added here.
+            </p>
+
+        </section>
+
+
+        <!-- PROJECTS PAGE -->
+
+        <section class="tab-panel"
+            id="projects"
+            role="tabpanel">
+
+            <h2 class="page-title">
+                Projects
+            </h2>
+
+            <div class="project-grid">
+
+
+                <!-- Encryption Hub -->
+
+                <article class="project-card">
+
+                    <h3>Encryption Hub</h3>
+
+                    <p>
+                        A Python and Streamlit application for
+                        exploring cryptographic techniques,
+                        including Caesar Cipher, AES, RSA and SHA-256.
+                    </p>
+
+                    <p>
+                        <strong>Technology:</strong>
+                        Python, Streamlit, PyCryptodome
+                    </p>
+
+                    <p>
+                        <strong>Focus:</strong>
+                        Encryption and hashing
+                    </p>
+
+                    <p>
+                        <a href="https://github.com/asmita211"
+                           target="_blank">
+                            View on GitHub
+                        </a>
+                    </p>
+
+                </article>
+
+
+                <!-- Finance + MPC -->
+
+                <article class="project-card">
+
+                    <h3>💰 2. Finance + MPC</h3>
+
+                    <p class="project-name">
+                        Privacy-Preserving Collaborative Fraud
+                        Detection using Secure Multi-Party Computation
+                    </p>
+
+                    <p>
+                        <strong>Core cryptography:</strong>
+                        Secure Multi-Party Computation
+                    </p>
+
+                    <p>
+                        <strong>Framework:</strong>
+                        MP-SPDZ
+                    </p>
+
+                    <p>
+                        <strong>Language:</strong>
+                        Python / MPC-compatible programming
+                    </p>
+
+                    <p>
+                        <strong>ML:</strong>
+                        Logistic Regression or another MPC-friendly model
+                    </p>
+
+                    <p>
+                        <strong>Dataset:</strong>
+                        Public transaction/fraud dataset
+                    </p>
+
+                    <p><em>Planned project</em></p>
+
+                </article>
+
+
+                <!-- Healthcare + FHE -->
+
+                <article class="project-card">
+
+                    <h3>🏥 1. Healthcare + FHE</h3>
+
+                    <p class="project-name">
+                        Privacy-Preserving Disease Risk Prediction
+                        using Fully Homomorphic Encryption
+                    </p>
+
+                    <p>
+                        <strong>Core cryptography:</strong>
+                        Fully Homomorphic Encryption
+                    </p>
+
+                    <p>
+                        <strong>Framework:</strong>
+                        TenSEAL
+                    </p>
+
+                    <p>
+                        <strong>Language:</strong>
+                        Python
+                    </p>
+
+                    <p>
+                        <strong>ML:</strong>
+                        Scikit-learn → Logistic Regression
+                    </p>
+
+                    <p>
+                        <strong>Interface:</strong>
+                        Streamlit
+                    </p>
+
+                    <p>
+                        <strong>Dataset:</strong>
+                        Public healthcare dataset
+                    </p>
+
+                    <p><em>Planned project</em></p>
+
+                </article>
+
+
+                <!-- Education + ZKP -->
+
+                <article class="project-card">
+
+                    <h3>🎓 3. Education + ZKP</h3>
+
+                    <p class="project-name">
+                        Privacy-Preserving Student Eligibility
+                        Verification using Zero-Knowledge Proofs
+                    </p>
+
+                    <p>
+                        <strong>Core cryptography:</strong>
+                        Zero-Knowledge Proofs
+                    </p>
+
+                    <p>
+                        <strong>ZKP framework:</strong>
+                        Circom
+                    </p>
+
+                    <p>
+                        <strong>Proof system/tooling:</strong>
+                        snarkjs
+                    </p>
+
+                    <p>
+                        <strong>Language:</strong>
+                        Circom + JavaScript/Node.js
+                    </p>
+
+                    <p>
+                        <strong>Interface:</strong>
+                        Optional Streamlit/web interface
+                    </p>
+
+                    <p><em>Planned project</em></p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CV PAGE -->
+
+        <section class="tab-panel"
+            id="cv"
+            role="tabpanel">
+
+            <h2 class="page-title"
+                style="text-align:center;">
+
+                CV
+
+            </h2>
+
+            <div class="cv-actions">
+
+                <a class="action-link"
+                   href="CV.pdf"
+                   target="_blank">
+
+                    View CV
+
+                </a>
+
+                <a class="action-link"
+                   href="CV.pdf"
+                   download>
+
+                    Download CV
+
+                </a>
+
+            </div>
+
+
+            <!-- CV PDF Preview -->
+
+            <iframe
+                class="cv-frame"
+                src="CV.pdf"
+                title="Asmita Baa CV">
+
+                Your browser cannot display the PDF.
+                Please use the View CV or Download CV link.
+
+            </iframe>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <strong>Contact</strong>
+
+        <span>
+            Mail:
+            <a href="mailto:baa.asmita714@gmail.com">
+                baa.asmita714@gmail.com
+            </a>
+        </span>
+
+        <span>
+            GitHub:
+            <a href="https://github.com/asmita211"
+               target="_blank">
+                asmita211
+            </a>
+        </span>
+
+    </footer>
+
+
+    <!-- NAVIGATION SCRIPT -->
+
+    <script>
+
+        function showTab(tabName) {
+
+            // Hide all pages
+
+            document.querySelectorAll('.tab-panel')
+                .forEach(panel => {
+
+                    panel.classList.toggle(
+                        'active',
+                        panel.id === tabName
+                    );
+
+                });
+
+
+            // Update active navigation button
+
+            document.querySelectorAll('.nav-button')
+                .forEach(button => {
+
+                    const selected =
+                        button.id === 'tab-' + tabName;
+
+                    button.setAttribute(
+                        'aria-selected',
+                        selected ? 'true' : 'false'
+                    );
+
+                });
+
+
+            // Scroll to top
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+        }
+
+    </script>
 
 </body>
 </html>
