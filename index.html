@@ -108,54 +108,57 @@
       display: block;
     }
 
-    /* HOME */
+    /* HOME PAGE */
 
     .home-layout {
       display: grid;
-      grid-template-columns: minmax(240px, 340px) minmax(0, 1fr);
+      grid-template-columns: minmax(210px, 280px) minmax(0, 1fr);
       gap: clamp(40px, 6vw, 85px);
       align-items: start;
     }
 
     .profile-column {
-      text-align: center;
+      text-align: left;
+      padding-top: 5px;
     }
 
     .profile-photo {
       display: block;
-      width: min(100%, 300px);
-      aspect-ratio: 1;
+      width: 180px;
+      height: 180px;
       object-fit: cover;
+      object-position: center;
       border-radius: 50%;
-      margin: 8px auto 18px;
+      margin: 0 0 18px;
       background: #eee;
     }
 
     .profile-column h1 {
-      margin: 4px 0 8px;
-      font-size: 25px;
-      line-height: 1.3;
+      margin: 0 0 8px;
+      font-size: 23px;
+      line-height: 1.4;
       font-weight: 600;
     }
 
     .profile-subtitle {
-      margin: 10px 0;
+      margin: 5px 0;
       color: #333;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 400;
     }
 
     .profile-location {
-      font-size: 15px;
+      margin: 5px 0;
+      font-size: 14px;
       color: var(--muted);
     }
 
     .profile-links {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      margin-top: 20px;
+      align-items: flex-start;
+      gap: 8px;
+      margin-top: 18px;
     }
 
     a {
@@ -163,7 +166,7 @@
     }
 
     .profile-links a {
-      font-size: 15px;
+      font-size: 14px;
       text-decoration: none;
       font-weight: 500;
     }
@@ -177,21 +180,21 @@
     .about h2 {
       margin: 0 0 16px;
       text-align: left;
-      font-size: 23px;
+      font-size: 22px;
       font-weight: 600;
     }
 
     .about p {
-      margin: 0 0 19px;
-      font-size: 16px;
+      margin: 0 0 18px;
+      font-size: 15px;
       font-weight: 400;
-      line-height: 1.75;
+      line-height: 1.8;
       text-align: justify;
       color: #333;
     }
 
     .research-focus {
-      margin-top: 25px;
+      margin-top: 24px;
       font-size: 15px;
       line-height: 1.8;
       color: #333;
@@ -199,7 +202,7 @@
 
     .research-focus h3 {
       margin: 0 0 8px;
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 600;
       color: var(--ink);
     }
@@ -212,7 +215,7 @@
 
     .page-title {
       margin: 12px 0 24px;
-      font-size: 23px;
+      font-size: 22px;
       font-weight: 600;
     }
 
@@ -224,7 +227,7 @@
       gap: 30px;
       align-items: flex-start;
       padding: 4px 0 22px;
-      font-size: 16px;
+      font-size: 15px;
     }
 
     .publication-entry p {
@@ -243,41 +246,57 @@
     /* PRESENTATION */
 
     .empty-message {
-      font-size: 16px;
+      font-size: 15px;
       color: #555;
     }
 
     /* CV */
 
-    .cv-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin: 0 0 18px;
-    }
-
-    .action-link {
-      display: inline-block;
-      border: 1.5px solid #171717;
-      border-radius: 999px;
-      padding: 7px 18px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .action-link:hover {
-      background: #171717;
-      color: #fff;
+    .cv-container {
+      width: 100%;
+      max-width: 850px;
+      margin: 0 auto;
     }
 
     .cv-image {
       width: 100%;
-      max-width: 850px;
       height: auto;
       border: 1px solid #ddd;
       display: block;
-      margin: auto;
+    }
+
+    .cv-download-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+
+    .download-icon {
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #222;
+      border-radius: 50%;
+      color: #171717;
+      text-decoration: none;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .download-icon:hover {
+      background: #171717;
+      color: #fff;
+    }
+
+    .download-icon svg {
+      width: 17px;
+      height: 17px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     /* FOOTER */
@@ -311,22 +330,22 @@
 
     @media (max-width: 850px) {
 
-      .site-header {
-        padding-left: 24px;
-        padding-right: 24px;
-      }
-
       .home-layout {
         grid-template-columns: 1fr;
         gap: 32px;
       }
 
+      .profile-column {
+        text-align: left;
+      }
+
       .profile-photo {
-        width: 230px;
+        width: 160px;
+        height: 160px;
       }
 
       .about h2 {
-        text-align: center;
+        text-align: left;
       }
 
       .about p {
@@ -372,7 +391,8 @@
       }
 
       .profile-photo {
-        width: 205px;
+        width: 145px;
+        height: 145px;
       }
 
       .about p {
@@ -416,8 +436,6 @@
 
     <nav class="navigation" role="tablist" aria-label="Portfolio sections">
 
-      <!-- HOME ON LEFT -->
-
       <button class="nav-button nav-home"
         id="tab-home"
         role="tab"
@@ -426,8 +444,6 @@
         onclick="showTab('home')">
         Home
       </button>
-
-      <!-- OTHER TABS ON RIGHT -->
 
       <div class="nav-right">
 
@@ -478,13 +494,14 @@
 
       <div class="home-layout">
 
+        <!-- PROFILE SECTION -->
+
         <aside class="profile-column">
 
-          <!-- UPDATED PROFILE PHOTO -->
-        <img
-             class="profile-photo"
-             src="Baa_asmita.jpeg?v=4"
-             alt="Portrait of Asmita Baa">
+          <img
+            class="profile-photo"
+            src="Baa_asmita.jpeg?v=5"
+            alt="Portrait of Asmita Baa">
 
           <h1>Asmita Baa</h1>
 
@@ -663,26 +680,35 @@
       role="tabpanel"
       aria-labelledby="tab-cv">
 
-      <h2 class="page-title" style="text-align:center;">
-        CV
-      </h2>
+      <h2 class="page-title">CV</h2>
 
-      <div class="cv-actions">
-
-        <a class="action-link"
-          href="Asmita__Baa.jpg"
-          download="Asmita__Baa.jpg">
-          Download ↓
-        </a>
-
-      </div>
-
-      <div style="text-align:center; margin-top:20px;">
+      <div class="cv-container">
 
         <img
           class="cv-image"
           src="Asmita__Baa.jpg"
           alt="Asmita Baa Curriculum Vitae">
+
+        <!-- SMALL DOWNLOAD ICON AT BOTTOM RIGHT -->
+
+        <div class="cv-download-row">
+
+          <a
+            class="download-icon"
+            href="Asmita__Baa.jpg"
+            download="Asmita__Baa.jpg"
+            aria-label="Download CV"
+            title="Download CV">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v12"></path>
+              <path d="m7 10 5 5 5-5"></path>
+              <path d="M5 20h14"></path>
+            </svg>
+
+          </a>
+
+        </div>
 
       </div>
 
