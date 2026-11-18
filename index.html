@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="description" content="Asmita Baa — Applied Cryptography and Privacy-Preserving Computing portfolio">
+
   <title>Asmita Baa | Research Portfolio</title>
 
   <style>
@@ -25,13 +27,16 @@
 
     body {
       margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
       background: #fff;
       color: var(--ink);
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.55;
     }
 
-    /* Navigation */
+    /* NAVIGATION */
 
     .site-header {
       width: min(var(--page-width), 100%);
@@ -68,11 +73,11 @@
       color: #fff;
     }
 
-    /* Main */
+    /* MAIN CONTENT */
 
     main {
       width: min(var(--page-width), 100%);
-      min-height: 650px;
+      flex: 1 0 auto;
       margin: 18px auto 0;
       padding: 12px clamp(24px, 5.4vw, 82px) 55px;
     }
@@ -85,7 +90,7 @@
       display: block;
     }
 
-    /* Home */
+    /* HOME */
 
     .home-layout {
       display: grid;
@@ -141,7 +146,7 @@
       text-decoration: underline;
     }
 
-    /* About Me */
+    /* ABOUT ME */
 
     .about h2 {
       margin: 0 0 6px;
@@ -166,14 +171,14 @@
       font-size: 19px;
     }
 
-    /* Inner Pages */
+    /* INNER PAGES */
 
     .page-title {
       margin: 12px 0 24px;
       font-size: 25px;
     }
 
-    /* Publication */
+    /* PUBLICATION */
 
     .publication-entry {
       display: flex;
@@ -185,7 +190,7 @@
     }
 
     .publication-entry p {
-      margin: 0;
+      margin: 0 0 8px;
     }
 
     .publication-date {
@@ -193,40 +198,6 @@
       padding-top: 25px;
       color: var(--muted);
       white-space: nowrap;
-    }
-
-    /* Projects */
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 30px 55px;
-    }
-
-    .project-card {
-      padding: 0 0 16px;
-    }
-
-    .project-card h3 {
-      margin: 0 0 5px;
-      font-size: 18px;
-    }
-
-    .project-card p {
-      margin: 3px 0;
-    }
-
-    .project-card .project-name {
-      font-weight: 700;
-    }
-
-    .project-card a {
-      text-decoration: underline;
-    }
-
-    .empty-message {
-      color: var(--muted);
-      font-size: 17px;
     }
 
     /* CV */
@@ -252,25 +223,24 @@
       color: #fff;
     }
 
-    .cv-frame {
-      width: 100%;
-      height: 720px;
-      border: 1px solid #ddd;
-      background: #f7f7f7;
-    }
-
-    /* Footer */
+    /* FOOTER */
 
     footer {
       width: min(var(--page-width), 100%);
-      margin: 0 auto;
+      margin-top: auto;
+      margin-left: auto;
+      margin-right: auto;
+      flex-shrink: 0;
+
       border-top: 1px solid #eee;
       padding: 22px clamp(24px, 5.4vw, 82px);
+
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 16px 35px;
       flex-wrap: wrap;
+
       font-size: 17px;
     }
 
@@ -278,7 +248,7 @@
       font-size: 18px;
     }
 
-    /* Responsive Design */
+    /* RESPONSIVE DESIGN */
 
     @media (max-width: 850px) {
 
@@ -305,11 +275,6 @@
         text-align: left;
       }
 
-      .project-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-
       .publication-entry {
         flex-direction: column;
         gap: 4px;
@@ -317,10 +282,6 @@
 
       .publication-date {
         padding-top: 0;
-      }
-
-      .cv-frame {
-        height: 600px;
       }
 
       footer {
@@ -354,10 +315,6 @@
       .research-focus {
         font-size: 16px;
       }
-
-      .cv-frame {
-        height: 480px;
-      }
     }
 
   </style>
@@ -365,7 +322,7 @@
 
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- NAVIGATION BAR -->
 
   <header class="site-header">
 
@@ -399,15 +356,6 @@
       </button>
 
       <button class="nav-button"
-        id="tab-projects"
-        role="tab"
-        aria-controls="projects"
-        aria-selected="false"
-        onclick="showTab('projects')">
-        Projects
-      </button>
-
-      <button class="nav-button"
         id="tab-cv"
         role="tab"
         aria-controls="cv"
@@ -421,6 +369,8 @@
   </header>
 
 
+  <!-- MAIN CONTENT -->
+
   <main>
 
     <!-- HOME PAGE -->
@@ -433,8 +383,6 @@
       <div class="home-layout">
 
         <aside class="profile-column">
-
-          <!-- Profile image: profile.jpg -->
 
           <img
             class="profile-photo"
@@ -457,15 +405,11 @@
               GitHub
             </a>
 
-            <!-- Replace # with your LinkedIn URL -->
-
             <a href="#"
               target="_blank"
               rel="noopener">
               LinkedIn
             </a>
-
-            <!-- Replace # with your Instagram URL -->
 
             <a href="#"
               target="_blank"
@@ -507,7 +451,6 @@
             privacy-preserving computing, particularly for sensitive applications
             in <strong>healthcare, finance, education, and cloud-based AI services</strong>.
           </p>
-
 
           <!-- RESEARCH FOCUS -->
 
@@ -563,7 +506,7 @@
           </p>
 
           <p>
-            <strong>Part of Book Series:</strong>
+            <strong>Book Series:</strong>
             Frontiers of Artificial Intelligence, Ethics and Multidisciplinary Applications
           </p>
 
@@ -574,13 +517,23 @@
 
           <p>
             <strong>Publisher:</strong>
-            Springer Nature Singapore Pte Ltd.
+            Springer Nature Singapore Pte. Ltd.
+          </p>
+
+          <p>
+            <strong>Publication Status:</strong>
+            Accepted for Publication
+          </p>
+
+          <p>
+            <strong>Expected Publication:</strong>
+            February 2027
           </p>
 
         </div>
 
         <div class="publication-date">
-          Aug 2025 – Dec 2025
+          February 2027
         </div>
 
       </div>
@@ -604,221 +557,49 @@
     </section>
 
 
-    <!-- PROJECTS PAGE -->
+    <!-- CV PAGE -->
 
     <section class="tab-panel"
-      id="projects"
+      id="cv"
       role="tabpanel"
-      aria-labelledby="tab-projects">
+      aria-labelledby="tab-cv">
 
-      <h2 class="page-title">Projects</h2>
+      <h2 class="page-title" style="text-align:center;">
+        CV
+      </h2>
 
-      <div class="project-grid">
+      <div class="cv-actions">
 
-        <!-- ENCRYPTION HUB -->
+        <a class="action-link"
+          href="Asmita__Baa.jpg"
+          download="Asmita__Baa.jpg">
+          Download ↓
+        </a>
 
-        <article class="project-card">
+      </div>
 
-          <h3>Encryption Hub</h3>
+      <div style="text-align:center; margin-top:20px;">
 
-          <p>
-            A Python and Streamlit application for exploring cryptographic
-            techniques, including Caesar Cipher, AES, RSA and SHA-256.
-          </p>
-
-          <p>
-            <strong>Technology:</strong>
-            Python, Streamlit, PyCryptodome
-          </p>
-
-          <p>
-            <strong>Focus:</strong>
-            Encryption and hashing
-          </p>
-
-          <p>
-            <a href="https://github.com/asmita211"
-              target="_blank"
-              rel="noopener">
-              View on GitHub
-            </a>
-          </p>
-
-        </article>
-
-
-        <!-- FINANCE + MPC -->
-
-        <article class="project-card">
-
-          <h3>💰 2. Finance + MPC</h3>
-
-          <p class="project-name">
-            Privacy-Preserving Collaborative Fraud Detection
-            using Secure Multi-Party Computation
-          </p>
-
-          <p>
-            <strong>Core cryptography:</strong>
-            Secure Multi-Party Computation
-          </p>
-
-          <p>
-            <strong>Framework:</strong>
-            MP-SPDZ
-          </p>
-
-          <p>
-            <strong>Language:</strong>
-            Python / MPC-compatible programming
-          </p>
-
-          <p>
-            <strong>ML:</strong>
-            Logistic Regression or another MPC-friendly model
-          </p>
-
-          <p>
-            <strong>Dataset:</strong>
-            Public transaction/fraud dataset
-          </p>
-
-          <p><em>Planned project</em></p>
-
-        </article>
-
-
-        <!-- HEALTHCARE + FHE -->
-
-        <article class="project-card">
-
-          <h3>🏥 1. Healthcare + FHE</h3>
-
-          <p class="project-name">
-            Privacy-Preserving Disease Risk Prediction
-            using Fully Homomorphic Encryption
-          </p>
-
-          <p>
-            <strong>Core cryptography:</strong>
-            Fully Homomorphic Encryption
-          </p>
-
-          <p>
-            <strong>Framework:</strong>
-            TenSEAL
-          </p>
-
-          <p>
-            <strong>Language:</strong>
-            Python
-          </p>
-
-          <p>
-            <strong>ML:</strong>
-            Scikit-learn → Logistic Regression
-          </p>
-
-          <p>
-            <strong>Interface:</strong>
-            Streamlit
-          </p>
-
-          <p>
-            <strong>Dataset:</strong>
-            Public healthcare dataset
-          </p>
-
-          <p><em>Planned project</em></p>
-
-        </article>
-
-
-        <!-- EDUCATION + ZKP -->
-
-        <article class="project-card">
-
-          <h3>🎓 3. Education + ZKP</h3>
-
-          <p class="project-name">
-            Privacy-Preserving Student Eligibility Verification
-            using Zero-Knowledge Proofs
-          </p>
-
-          <p>
-            <strong>Core cryptography:</strong>
-            Zero-Knowledge Proofs
-          </p>
-
-          <p>
-            <strong>ZKP framework:</strong>
-            Circom
-          </p>
-
-          <p>
-            <strong>Proof system/tooling:</strong>
-            snarkjs
-          </p>
-
-          <p>
-            <strong>Language:</strong>
-            Circom + JavaScript/Node.js
-          </p>
-
-          <p>
-            <strong>Interface:</strong>
-            Optional Streamlit/web interface
-          </p>
-
-          <p><em>Planned project</em></p>
-
-        </article>
+        <img
+          src="Asmita__Baa.jpg"
+          alt="Asmita Baa Curriculum Vitae"
+          style="
+            width:100%;
+            max-width:850px;
+            height:auto;
+            border:1px solid #ddd;
+            display:block;
+            margin:auto;
+          ">
 
       </div>
 
     </section>
 
-
-   
-
-<!-- CV PAGE -->
-
-<section class="tab-panel"
-    id="cv"
-    role="tabpanel"
-    aria-labelledby="tab-cv">
-
-    <h2 class="page-title" style="text-align:center;">
-        CV
-    </h2>
-
-    <div class="cv-actions">
-        <a class="action-link"
-           href="Asmita__Baa.jpg"
-           download="Asmita__Baa.jpg">
-            Download ↓
-        </a>
-    </div>
-
-    <div style="text-align:center; margin-top:20px;">
-        <img
-            src="Asmita__Baa.jpg"
-            alt="Asmita Baa Curriculum Vitae"
-            style="
-                width:100%;
-                max-width:850px;
-                height:auto;
-                border:1px solid #ddd;
-                display:block;
-                margin:auto;
-            ">
-    </div>
-
-</section>
+  </main>
 
 
-
-  <!-- FOOTER -->
+  <!-- FOOTER: ALWAYS AT THE BOTTOM -->
 
   <footer>
 
@@ -849,7 +630,7 @@
 
     function showTab(tabName) {
 
-      // Hide all pages
+      // Hide all pages and show selected page
 
       document.querySelectorAll('.tab-panel').forEach(panel => {
 
