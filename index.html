@@ -9,12 +9,18 @@
 
   <title>Asmita Baa | Research Portfolio</title>
 
+  <!-- PROFESSIONAL FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --ink: #111;
-      --muted: #555;
-      --line: #111;
+      --ink: #171717;
+      --muted: #666;
+      --line: #222;
       --page-width: 1440px;
+      --font: "Inter", "Segoe UI", Arial, sans-serif;
     }
 
     * {
@@ -32,8 +38,10 @@
       flex-direction: column;
       background: #fff;
       color: var(--ink);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.55;
+      font-family: var(--font);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.65;
     }
 
     /* NAVIGATION */
@@ -41,35 +49,45 @@
     .site-header {
       width: min(var(--page-width), 100%);
       margin: 0 auto;
-      padding: 28px clamp(20px, 5vw, 78px) 12px;
+      padding: 25px clamp(24px, 5.4vw, 82px) 12px;
     }
 
     .navigation {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
+      width: 100%;
+      gap: 20px;
+    }
+
+    .nav-home {
+      margin-right: auto;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-left: auto;
     }
 
     .nav-button {
       appearance: none;
-      border: 2px solid var(--line);
+      border: 1.5px solid var(--line);
       border-radius: 999px;
       background: #fff;
       color: var(--ink);
-      min-width: 150px;
-      padding: 9px 24px;
-      font: inherit;
-      font-size: 19px;
-      font-weight: 700;
+      padding: 7px 19px;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 600;
       cursor: pointer;
-      transition: background .18s ease, color .18s ease;
+      transition: background .2s ease, color .2s ease;
     }
 
     .nav-button:hover,
     .nav-button[aria-selected="true"] {
-      background: #111;
+      background: #171717;
       color: #fff;
     }
 
@@ -78,7 +96,7 @@
     main {
       width: min(var(--page-width), 100%);
       flex: 1 0 auto;
-      margin: 18px auto 0;
+      margin: 25px auto 0;
       padding: 12px clamp(24px, 5.4vw, 82px) 55px;
     }
 
@@ -94,8 +112,8 @@
 
     .home-layout {
       display: grid;
-      grid-template-columns: minmax(250px, 370px) minmax(0, 1fr);
-      gap: clamp(35px, 6vw, 85px);
+      grid-template-columns: minmax(240px, 340px) minmax(0, 1fr);
+      gap: clamp(40px, 6vw, 85px);
       align-items: start;
     }
 
@@ -105,32 +123,39 @@
 
     .profile-photo {
       display: block;
-      width: min(100%, 330px);
+      width: min(100%, 300px);
       aspect-ratio: 1;
       object-fit: cover;
       border-radius: 50%;
-      margin: 8px auto 0;
+      margin: 8px auto 18px;
       background: #eee;
     }
 
     .profile-column h1 {
-      margin: 4px 0 14px;
-      font-size: 29px;
-      line-height: 1.2;
+      margin: 4px 0 8px;
+      font-size: 25px;
+      line-height: 1.3;
+      font-weight: 600;
     }
 
     .profile-subtitle {
-      margin: 18px 0;
-      color: #222;
-      font-size: 19px;
+      margin: 10px 0;
+      color: #333;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .profile-location {
+      font-size: 15px;
+      color: var(--muted);
     }
 
     .profile-links {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 13px;
-      margin-top: 22px;
+      gap: 10px;
+      margin-top: 20px;
     }
 
     a {
@@ -138,8 +163,9 @@
     }
 
     .profile-links a {
-      font-size: 18px;
+      font-size: 15px;
       text-decoration: none;
+      font-weight: 500;
     }
 
     .profile-links a:hover {
@@ -149,33 +175,45 @@
     /* ABOUT ME */
 
     .about h2 {
-      margin: 0 0 6px;
-      text-align: center;
-      font-size: 27px;
+      margin: 0 0 16px;
+      text-align: left;
+      font-size: 23px;
+      font-weight: 600;
     }
 
     .about p {
-      margin: 0 0 25px;
-      font-size: 18px;
+      margin: 0 0 19px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.75;
       text-align: justify;
+      color: #333;
     }
 
     .research-focus {
-      margin-top: 26px;
-      font-size: 18px;
-      line-height: 1.55;
+      margin-top: 25px;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #333;
     }
 
     .research-focus h3 {
-      margin: 0 0 2px;
-      font-size: 19px;
+      margin: 0 0 8px;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .research-focus div {
+      margin-bottom: 5px;
     }
 
     /* INNER PAGES */
 
     .page-title {
       margin: 12px 0 24px;
-      font-size: 25px;
+      font-size: 23px;
+      font-weight: 600;
     }
 
     /* PUBLICATION */
@@ -190,14 +228,23 @@
     }
 
     .publication-entry p {
-      margin: 0 0 8px;
+      margin: 0 0 10px;
+      line-height: 1.7;
     }
 
     .publication-date {
       flex: 0 0 auto;
       padding-top: 25px;
       color: var(--muted);
+      font-size: 14px;
       white-space: nowrap;
+    }
+
+    /* PRESENTATION */
+
+    .empty-message {
+      font-size: 16px;
+      color: #555;
     }
 
     /* CV */
@@ -211,16 +258,26 @@
 
     .action-link {
       display: inline-block;
-      border: 2px solid #111;
+      border: 1.5px solid #171717;
       border-radius: 999px;
-      padding: 8px 20px;
+      padding: 7px 18px;
       text-decoration: none;
-      font-weight: 700;
+      font-size: 14px;
+      font-weight: 600;
     }
 
     .action-link:hover {
-      background: #111;
+      background: #171717;
       color: #fff;
+    }
+
+    .cv-image {
+      width: 100%;
+      max-width: 850px;
+      height: auto;
+      border: 1px solid #ddd;
+      display: block;
+      margin: auto;
     }
 
     /* FOOTER */
@@ -231,6 +288,7 @@
       margin-left: auto;
       margin-right: auto;
       flex-shrink: 0;
+
       border-top: 1px solid #eee;
       padding: 22px clamp(24px, 5.4vw, 82px);
 
@@ -240,34 +298,35 @@
       gap: 16px 35px;
       flex-wrap: wrap;
 
-      font-size: 17px;
+      font-family: var(--font);
+      font-size: 14px;
     }
 
     footer strong {
-      font-size: 18px;
+      font-size: 15px;
+      font-weight: 600;
     }
 
     /* RESPONSIVE DESIGN */
 
     @media (max-width: 850px) {
 
-      .navigation {
-        justify-content: center;
-      }
-
-      .nav-button {
-        min-width: 125px;
-        font-size: 16px;
-        padding: 8px 17px;
+      .site-header {
+        padding-left: 24px;
+        padding-right: 24px;
       }
 
       .home-layout {
         grid-template-columns: 1fr;
-        gap: 28px;
+        gap: 32px;
       }
 
       .profile-photo {
         width: 230px;
+      }
+
+      .about h2 {
+        text-align: center;
       }
 
       .about p {
@@ -289,30 +348,60 @@
       }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 520px) {
 
       .site-header {
         padding: 18px 14px 8px;
+      }
+
+      .navigation {
+        gap: 12px;
+      }
+
+      .nav-right {
+        gap: 6px;
+      }
+
+      .nav-button {
+        padding: 7px 10px;
+        font-size: 12px;
       }
 
       main {
         padding: 15px 20px 40px;
       }
 
-      .nav-button {
-        min-width: 0;
-        flex: 1 1 28%;
-        font-size: 14px;
-        padding: 8px 10px;
-      }
-
       .profile-photo {
         width: 205px;
       }
 
-      .about p,
+      .about p {
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
       .research-focus {
-        font-size: 16px;
+        font-size: 14px;
+      }
+
+      footer {
+        padding: 20px;
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 360px) {
+
+      .navigation {
+        flex-wrap: wrap;
+      }
+
+      .nav-home {
+        margin-right: 0;
+      }
+
+      .nav-right {
+        margin-left: auto;
       }
     }
 
@@ -327,7 +416,9 @@
 
     <nav class="navigation" role="tablist" aria-label="Portfolio sections">
 
-      <button class="nav-button"
+      <!-- HOME ON LEFT -->
+
+      <button class="nav-button nav-home"
         id="tab-home"
         role="tab"
         aria-controls="home"
@@ -336,32 +427,38 @@
         Home
       </button>
 
-      <button class="nav-button"
-        id="tab-publication"
-        role="tab"
-        aria-controls="publication"
-        aria-selected="false"
-        onclick="showTab('publication')">
-        Publication
-      </button>
+      <!-- OTHER TABS ON RIGHT -->
 
-      <button class="nav-button"
-        id="tab-presentation"
-        role="tab"
-        aria-controls="presentation"
-        aria-selected="false"
-        onclick="showTab('presentation')">
-        Presentation
-      </button>
+      <div class="nav-right">
 
-      <button class="nav-button"
-        id="tab-cv"
-        role="tab"
-        aria-controls="cv"
-        aria-selected="false"
-        onclick="showTab('cv')">
-        CV
-      </button>
+        <button class="nav-button"
+          id="tab-publication"
+          role="tab"
+          aria-controls="publication"
+          aria-selected="false"
+          onclick="showTab('publication')">
+          Publication
+        </button>
+
+        <button class="nav-button"
+          id="tab-presentation"
+          role="tab"
+          aria-controls="presentation"
+          aria-selected="false"
+          onclick="showTab('presentation')">
+          Presentation
+        </button>
+
+        <button class="nav-button"
+          id="tab-cv"
+          role="tab"
+          aria-controls="cv"
+          aria-selected="false"
+          onclick="showTab('cv')">
+          CV
+        </button>
+
+      </div>
 
     </nav>
 
@@ -383,12 +480,11 @@
 
         <aside class="profile-column">
 
-          <!-- NEW PROFILE PHOTO -->
-           <img
+          <!-- UPDATED PROFILE PHOTO -->
+          <img
             class="profile-photo"
-            src="Asmita___baa.jpeg"
+            src="Asmita___baa.jpeg?v=3"
             alt="Portrait of Asmita Baa">
-         
 
           <h1>Asmita Baa</h1>
 
@@ -396,7 +492,9 @@
             Computer Applications Graduate
           </p>
 
-          <p>Jharkhand, India</p>
+          <p class="profile-location">
+            Jharkhand, India
+          </p>
 
           <div class="profile-links">
 
@@ -582,16 +680,9 @@
       <div style="text-align:center; margin-top:20px;">
 
         <img
+          class="cv-image"
           src="Asmita__Baa.jpg"
-          alt="Asmita Baa Curriculum Vitae"
-          style="
-            width:100%;
-            max-width:850px;
-            height:auto;
-            border:1px solid #ddd;
-            display:block;
-            margin:auto;
-          ">
+          alt="Asmita Baa Curriculum Vitae">
 
       </div>
 
@@ -631,8 +722,6 @@
 
     function showTab(tabName) {
 
-      // Hide all pages and show selected page
-
       document.querySelectorAll('.tab-panel').forEach(panel => {
 
         panel.classList.toggle(
@@ -641,9 +730,6 @@
         );
 
       });
-
-
-      // Update navigation buttons
 
       document.querySelectorAll('.nav-button').forEach(button => {
 
@@ -655,9 +741,6 @@
         );
 
       });
-
-
-      // Scroll to top
 
       window.scrollTo({
         top: 0,
